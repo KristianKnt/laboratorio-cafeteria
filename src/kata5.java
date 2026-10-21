@@ -50,9 +50,9 @@ public class kata5 {
                     System.out.println("\nSaliendo del sistema...");
                     break;
                 default:
-                    System.out.println("Numero no registrado");
+                    System.out.println("Opción inválida");
             }
-        }while(opcion == 6);
+        }while(opcion != 6);
 
         System.out.println("Total del pedido: "+valor_total);
 
