@@ -12,8 +12,10 @@ public class kata6 {
         int total_clientes = 0;
         int horaPico = -1;
         int maxClientes = -1;
+        int contClientes = 0;
         int opcion = 0;
         int contador = 1;
+        int horaPicoFinal = 0;
 
 
 
@@ -32,12 +34,20 @@ public class kata6 {
                     dato = Entrada.nextDouble();
                 }
                 contadorHoras += dato;
+                horaPico = (int) dato;
                 System.out.println("Ingresa el número de clientes en esa hora : ");
                 dato = Entrada.nextInt();
-                total_clientes += dato;
+              total_clientes = (int) (total_clientes + dato);
+                contClientes = (int) dato;
 
             }
 
+
+
+            if(contClientes > maxClientes){
+                maxClientes = contClientes;
+                horaPicoFinal = horaPico;
+            }
 
              contador ++;
         }while(opcion != -1);
@@ -46,6 +56,8 @@ public class kata6 {
         System.out.println("horas -> "+contadorHoras);
         System.out.println("Total clientes atendidos -> "+total_clientes);
         System.out.println("Promedio clientes por hora -> "+ contadorHoras/contador );
+        System.out.println("Hora con mas cliente -> " + horaPicoFinal +"( "+maxClientes+" clientes)");
+
         System.out.println();
 
     }
